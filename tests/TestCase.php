@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Centrex\Meta\Tests;
 
+use Centrex\Meta\MetaServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Centrex\Meta\MetaServiceProvider;
 
 class TestCase extends Orchestra
 {
