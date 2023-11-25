@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace VendorName\Skeleton\Commands;
+namespace Centrex\Meta\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class MetaCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-model-meta';
 
     public $description = 'My command';
 
