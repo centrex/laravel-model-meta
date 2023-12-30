@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace Centrex\Meta;
 
@@ -21,7 +21,7 @@ class MetaServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('laravel-model-meta.php'),
+                __DIR__ . '/../config/config.php' => config_path('laravel-model-meta.php'),
             ], 'laravel-model-meta-config');
 
             // Publishing the migrations.
@@ -53,11 +53,11 @@ class MetaServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'laravel-model-meta');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'laravel-model-meta');
 
         // Register the main class to use with the facade
         $this->app->singleton('laravel-model-meta', function () {
-            return new Meta;
+            return new Meta();
         });
     }
 }
