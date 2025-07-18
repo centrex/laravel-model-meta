@@ -9,7 +9,7 @@ use Illuminate\Support\ServiceProvider;
 class MetaServiceProvider extends ServiceProvider
 {
     /** Bootstrap the application services. */
-    public function boot()
+    public function boot(): void
     {
         /*
          * Optional methods to load your package assets
@@ -50,14 +50,12 @@ class MetaServiceProvider extends ServiceProvider
     }
 
     /** Register the application services. */
-    public function register()
+    public function register(): void
     {
         // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'laravel-model-meta');
 
         // Register the main class to use with the facade
-        $this->app->singleton('laravel-model-meta', function () {
-            return new Meta();
-        });
+        $this->app->singleton('laravel-model-meta', fn (): Meta => new Meta());
     }
 }
